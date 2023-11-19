@@ -1,0 +1,14 @@
+version: '3' # specify docker-compose version
+services: # services to run
+  flask_app_1: # service name
+    build: ./flask1 # specify the directory of the Dockerfile
+    ports: # specify port forwarding
+      - "8080:5000"
+    volumes: # mount volume
+      - ./flask1:/app
+  flask_app_2: 
+    build: ./flask2
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./flask2:/app

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Healthcare App</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200">
+
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">Healthcare App</h1>
+    </header>
+
+    <main class="p-4">
+
+        <section>
+            <h2 class="text-xl mb-2">Dataset preview using a TABLE in HTML</h2>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    margin: 20px;
+                }
+                h1 {
+                    text-align: center;
+                    color: #000;
+                }
+                table {
+                    width: 100%;
+                    margin: 20px 0;
+                    border-collapse: collapse;
+                }
+                table, th, td {
+                    border: 1px solid #333;
+                }
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                }
+                th {
+                    background-color: rgba(0, 183, 255, 0.452);
+                    color: #333;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    background-color: #ddd;
+                }
+            </style>
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Data as of</th>
+                        <th class="px-4 py-2">Age group</th>
+                        <th class="px-4 py-2">COVID-19 Deaths</th>
+                        <th class="px-4 py-2">Indicator</th>
+                        <th class="px-4 py-2">Sex</th>
+                        <th class="px-4 py-2">Race or Hispanic Origin Group</th>
+                        <th class="px-4 py-2">Start Week</th>
+                        <th class="px-4 py-2">End Week</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in data.values %}
+                        <tr>
+                            <td class="border px-4 py-2">{{ data[0] }}</td>
+                            <td class="border px-4 py-2">{{ data[1] }}</td>
+                            <td class="border px-4 py-2">{{ data[2] }}</td>
+                            <td class="border px-4 py-2">{{ data[3] }}</td>
+                            <td class="border px-4 py-2">{{ data[4] }}</td>
+                            <td class="border px-4 py-2">{{ data[5] }}</td>
+                            <td class="border px-4 py-2">{{ data[6] }}</td>
+                            <td class="border px-4 py-2">{{ data[7] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-6">
+        <p>© 2023 Stephen Healthcare App. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+  

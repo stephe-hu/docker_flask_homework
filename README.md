@@ -1,5 +1,10 @@
 # docker_flask_homework
 
+## Installing Docker locally 
+1. Click [here](https://hub.docker.com/) to go to the Docker Hub website and download Docker Desktop.
+2. Follow the instructions to install Docker Desktop and setup your Docker Hub account.
+3. Go to VS Code and install the Docker extension.
+
 ## The process of Dockerizing the applications in both parts
 ### Part1
 1. Create a basic Flask application with a requirements.txt file.
@@ -15,7 +20,7 @@
 4. Use the command `docker-compose down` to stop the containers.
 5. Remove containeres using the command `docker-compose rm`.
 
-### Observations, challenges faced, and reflections on the use of Docker and Docker Compose.
+## Observations, challenges faced, and reflections on the use of Docker and Docker Compose.
 - Docker containers contain applications and all their dependencies, so they can be run on any computer on any environment. This helps developers to prevent conflicts between dependencies and to run applications on different environments.
 - Docker Compose is a tool for defining and running multi-container Docker applications. It allows developers to run multiple containers for multipel applications at the same time. 
 
